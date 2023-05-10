@@ -89,7 +89,7 @@ public class GSClanNotificationsPlugin extends Plugin
 
 			Request request = new Request.Builder()
 				.header("Authorization", "Bearer " + config.token())
-				.url(BaseUrl + "/api/notification")
+				.url(BaseUrl + "/api/notifications")
 				.post(payload)
 				.build();
 			httpClient.newCall(request).enqueue(new Callback() {
