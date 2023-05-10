@@ -1,13 +1,13 @@
-package com.womccnotifications;
+package com.gsclannotifcations;
 
 import net.runelite.client.RuneLite;
 import net.runelite.client.externalplugins.ExternalPluginManager;
 
-public class WOMCCNotificationsPluginTest
+public class GSClanNotificationsPluginTest
 {
 	public static void main(String[] args) throws Exception
 	{
-		ExternalPluginManager.loadBuiltin(WOMCCNotificationsPlugin.class);
+		ExternalPluginManager.loadBuiltin(GSClanNotificationsPlugin.class);
 		RuneLite.main(args);
 	}
 }
