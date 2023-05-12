@@ -1,7 +1,8 @@
-package com.gsclannotifcations.notifications;
+package com.osrsclannotifcations.notifications;
 
 public enum NotificationType {
     BOSSDROP,
+    CLUEITEM,
     COFFERDEPOSIT,
     COFFERWITHDRAW,
     COLLECTIONLOG,
@@ -12,5 +13,6 @@ public enum NotificationType {
     PERSONALBEST,
     PKLOSE,
     PKWIN,
-    QUESTCOMPLETION
+    QUESTCOMPLETION,
+    TEST
 }

@@ -1,11 +1,11 @@
-package com.gsclannotifcations;
+package com.osrsclannotifcations;
 
 import net.runelite.client.config.Config;
 import net.runelite.client.config.ConfigGroup;
 import net.runelite.client.config.ConfigItem;
 
 @ConfigGroup("main")
-public interface GSClanNotificationsConfig extends Config
+public interface OSRSClanNotificationsConfig extends Config
 {
 
 	@ConfigItem(
@@ -29,21 +29,21 @@ public interface GSClanNotificationsConfig extends Config
 	}
 
 	@ConfigItem(
-			keyName = "cofferdeposit",
-			name = "Coffer Deposits",
-			description = "If selected will send coffer deposit notifications."
+			keyName = "clueitem",
+			name = "Clue Items",
+			description = "If selected will send clue item notifications."
 	)
-	default boolean cofferDeposit()
+	default boolean clueItem()
 	{
 		return true;
 	}
 
 	@ConfigItem(
-			keyName = "cofferwithdraw",
-			name = "Coffer Withdraws",
-			description = "If selected will send coffer withdraw notifications."
+			keyName = "cofferdeposit",
+			name = "Coffer",
+			description = "If selected will send coffer deposit notifications."
 	)
-	default boolean cofferWithdraw()
+	default boolean cofferDeposit()
 	{
 		return true;
 	}
@@ -89,22 +89,32 @@ public interface GSClanNotificationsConfig extends Config
 	}
 
 	@ConfigItem(
-			keyName = "levelup",
-			name = "Level Up",
-			description = "If selected will send level up notifications."
+			keyName = "screenshots",
+			name = "Send Screenshots",
+			description = "If selected will send screenshots when you get new drops, collection log item, or clue scroll item."
 	)
-	default boolean levelUp()
+	default boolean sendScreenshot()
 	{
 		return true;
 	}
 
-	@ConfigItem(
-			keyName = "pb",
-			name = "Personal Best",
-			description = "If selected will send personal best notifications."
-	)
-	default boolean pb()
-	{
-		return true;
-	}
+//	@ConfigItem(
+//			keyName = "levelup",
+//			name = "Level Up",
+//			description = "If selected will send level up notifications."
+//	)
+//	default boolean levelUp()
+//	{
+//		return true;
+//	}
+
+//	@ConfigItem(
+//			keyName = "pb",
+//			name = "Personal Best",
+//			description = "If selected will send personal best notifications."
+//	)
+//	default boolean pb()
+//	{
+//		return true;
+//	}
 }
