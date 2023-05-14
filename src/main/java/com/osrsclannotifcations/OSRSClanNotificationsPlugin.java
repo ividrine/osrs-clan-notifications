@@ -23,8 +23,6 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.Map.entry;
-
 @Slf4j
 @PluginDescriptor(
 	name = "Glory Seekers (t)"
