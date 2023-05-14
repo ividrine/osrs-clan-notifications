@@ -19,6 +19,7 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -47,19 +48,22 @@ public class OSRSClanNotificationsPlugin extends Plugin
 
 	private final String BaseUrl = "https://osrs-clan-bot.herokuapp.com";
 
-	private final static Map<NotificationType, String> nLookup = Map.ofEntries
-	(
-		entry(NotificationType.BOSSDROP, "received a drop"),
-		entry(NotificationType.RAIDLOOT, "received special loot"),
-		entry(NotificationType.CLUEITEM, "received a clue item"),
-		entry(NotificationType.COFFERDEPOSIT, "has deposited"),
-		entry(NotificationType.COFFERWITHDRAW, "has withdrawn"),
-		entry(NotificationType.COLLECTIONLOG, "collection log"),
-		entry(NotificationType.COMBATACHIEVEMENT, "combat achievements"),
-		entry(NotificationType.DIARYCOMPLETION, "diary"),
-		entry(NotificationType.HARDCOREDEATH, "hardcore"),
-		entry(NotificationType.LEVELUP, "level")
-	);
+
+	Map<NotificationType, String> nLookup = new HashMap<NotificationType, String>()
+	{
+		{
+			put(NotificationType.BOSSDROP, "received a drop");
+			put(NotificationType.RAIDLOOT, "received special loot");
+			put(NotificationType.CLUEITEM, "received a clue item");
+			put(NotificationType.COFFERDEPOSIT, "has deposited");
+			put(NotificationType.COFFERWITHDRAW, "has withdrawn");
+			put(NotificationType.COLLECTIONLOG, "collection log");
+			put(NotificationType.COMBATACHIEVEMENT, "combat achievements");
+			put(NotificationType.DIARYCOMPLETION, "diary");
+			put(NotificationType.HARDCOREDEATH, "hardcore");
+			put(NotificationType.LEVELUP, "level");
+		}
+	};
 
 	private static List<NotificationType> typesToScreenshot = Arrays.asList
 	(
