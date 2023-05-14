@@ -1,4 +1,4 @@
-package com.osrsclannotifcations.notifications;
+package com.osrsclannotifications.notifications;
 
 import java.util.Map;
 

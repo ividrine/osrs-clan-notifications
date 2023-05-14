@@ -1,9 +1,9 @@
-package com.osrsclannotifcations;
+package com.osrsclannotifications;
 import javax.imageio.ImageIO;
 import javax.inject.Inject;
 import com.google.inject.Provides;
-import com.osrsclannotifcations.notifications.Notification;
-import com.osrsclannotifcations.notifications.NotificationType;
+import com.osrsclannotifications.notifications.Notification;
+import com.osrsclannotifications.notifications.NotificationType;
 import lombok.extern.slf4j.Slf4j;
 import net.runelite.api.ChatMessageType;
 import net.runelite.api.Client;
