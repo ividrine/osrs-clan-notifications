@@ -45,26 +45,31 @@ public class OSRSClanNotificationsPlugin extends Plugin
 	@Inject
 	private DrawManager drawManager;
 
-	private final String BaseUrl = "http://localhost:3000";
+	private final String BaseUrl = "https://osrs-clan-bot.herokuapp.com";
 
 	private final static Map<NotificationType, String> nLookup = Map.ofEntries
 	(
-		entry(NotificationType.BOSSDROP, "received special loot"),
+		entry(NotificationType.BOSSDROP, "received a drop"),
+		entry(NotificationType.RAIDLOOT, "received special loot"),
 		entry(NotificationType.CLUEITEM, "received a clue item"),
 		entry(NotificationType.COFFERDEPOSIT, "has deposited"),
 		entry(NotificationType.COFFERWITHDRAW, "has withdrawn"),
 		entry(NotificationType.COLLECTIONLOG, "collection log"),
 		entry(NotificationType.COMBATACHIEVEMENT, "combat achievements"),
 		entry(NotificationType.DIARYCOMPLETION, "diary"),
-		entry(NotificationType.HARDCOREDEATH, "hardcore")
+		entry(NotificationType.HARDCOREDEATH, "hardcore"),
+		entry(NotificationType.LEVELUP, "level")
 	);
 
 	private static List<NotificationType> typesToScreenshot = Arrays.asList
 	(
 		NotificationType.BOSSDROP,
+		NotificationType.RAIDLOOT,
 		NotificationType.COLLECTIONLOG,
 		NotificationType.CLUEITEM,
-		NotificationType.TEST
+		NotificationType.DIARYCOMPLETION,
+		NotificationType.LEVELUP,
+		NotificationType.COMBATACHIEVEMENT
 	);
 
 	@Provides
@@ -80,16 +85,6 @@ public class OSRSClanNotificationsPlugin extends Plugin
 		String playerName = client.getLocalPlayer().getName();
 		String message = event.getMessage();
 
-//		if (event.getName() == playerName)
-//		{
-//			Notification n = new Notification();
-//			n.message = message;
-//			n.rsn = playerName;
-//			n.type = NotificationType.TEST;
-//
-//			BuildRequestAndSend(n);
-//		}
-
 		// if the message is a clan notification, and relates to the current player
 		if (type == ChatMessageType.CLAN_MESSAGE && message.contains(playerName)) {
 
@@ -99,12 +94,14 @@ public class OSRSClanNotificationsPlugin extends Plugin
 
 			if (n.type == null) return;
 			if (n.type == NotificationType.BOSSDROP && !config.bossDrop()) return;
+			if (n.type == NotificationType.RAIDLOOT && !config.raidLoot()) return;
 			if (n.type == NotificationType.CLUEITEM && !config.clueItem()) return;
 			if (n.type == NotificationType.COFFERDEPOSIT && !config.cofferDeposit()) return;
 			if (n.type == NotificationType.COLLECTIONLOG && !config.collectionLog()) return;
 			if (n.type == NotificationType.COMBATACHIEVEMENT && !config.combatAchievement()) return;
 			if (n.type == NotificationType.DIARYCOMPLETION && !config.diary()) return;
 			if (n.type == NotificationType.HARDCOREDEATH && !config.hardcore()) return;
+			if (n.type == NotificationType.LEVELUP && !config.levelUp()) return;
 
 			BuildRequestAndSend(n);
 

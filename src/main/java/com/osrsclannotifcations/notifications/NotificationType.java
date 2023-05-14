@@ -2,6 +2,7 @@ package com.osrsclannotifcations.notifications;
 
 public enum NotificationType {
     BOSSDROP,
+    RAIDLOOT,
     CLUEITEM,
     COFFERDEPOSIT,
     COFFERWITHDRAW,
@@ -11,8 +12,8 @@ public enum NotificationType {
     HARDCOREDEATH,
     LEVELUP,
     PERSONALBEST,
-    PKLOSE,
-    PKWIN,
     QUESTCOMPLETION,
-    TEST
+    PVPWIN,
+    PVPDEATH,
+
 }

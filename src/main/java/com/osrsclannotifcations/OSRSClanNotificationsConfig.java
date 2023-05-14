@@ -29,6 +29,16 @@ public interface OSRSClanNotificationsConfig extends Config
 	}
 
 	@ConfigItem(
+			keyName = "raidloot",
+			name = "Raid Loot",
+			description = "If selected will send raid loot notifications."
+	)
+	default boolean raidLoot()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			keyName = "clueitem",
 			name = "Clue Items",
 			description = "If selected will send clue item notifications."
@@ -89,24 +99,26 @@ public interface OSRSClanNotificationsConfig extends Config
 	}
 
 	@ConfigItem(
+			keyName = "levelup",
+			name = "Level Up",
+			description = "If selected will send level up notifications."
+	)
+	default boolean levelUp()
+	{
+		return true;
+	}
+
+	@ConfigItem(
 			keyName = "screenshots",
 			name = "Send Screenshots",
-			description = "If selected will send screenshots when you get new drops, collection log item, or clue scroll item."
+			description = "If selected will send screenshots for drops, collection log, clue item, diary, level up, and combat achievements."
 	)
 	default boolean sendScreenshot()
 	{
 		return true;
 	}
 
-//	@ConfigItem(
-//			keyName = "levelup",
-//			name = "Level Up",
-//			description = "If selected will send level up notifications."
-//	)
-//	default boolean levelUp()
-//	{
-//		return true;
-//	}
+
 
 //	@ConfigItem(
 //			keyName = "pb",
